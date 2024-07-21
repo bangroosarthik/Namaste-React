@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 // let ele=document.createElement("h1");
 // ele.innerHTML="Hello World";
 // let header=document.getElementById("root");
@@ -33,3 +35,7 @@ let header=React.createElement("div",{id:"header"},
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
 root.render(header);    
+
+
+
+
