@@ -73,4 +73,23 @@ body{
     border-radius: 20px;
 }
 
+.filter-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 1px;
+}
+.filter-btn{
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
 
+.filter-btn:hover{
+    background-color: yellow;
+    color: black;
+    font-weight: 500;
+}

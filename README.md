@@ -57,3 +57,44 @@ UI is driven by config. -> API data
 # Why we need keys in map?
 
 We need keys while we are using map because if we dont have keys then DOM will re render the entire component from scratch and it will be a costly operation whereas if we use keys it will just move the other elements and place it at its correct position without re rendering the entire DOM tree.
+
+
+Date- 25-07-2024
+
+Whenever you have hardcoded data store it in config.js or constants.js or utils.js (like src)
+
+import vs export 
+
+if multiple things you want to export use named export and if you want to export a single thing use default export 
+
+Note: in a single file there should be only single default export 
+
+
+# REACT HOOKS
+
+They are normal JS functions (utility functions)-> written inside react 
+
+1. useState() -> hook used to create super powerful state variable 
+
+Syntax is => const [variableName,setVariableName]= useState(defaultvalue);
+
+setVariable name is used to modify the variable 
+
+# Whenever a state variable changes it rerenders the entire component.
+
+
+
+2. React is fast because Good in DOM manipulations(efficient DOM Manipulations).
+
+3. React Fibre -> algorithm -> REACT 16 -> is a new way of updating DOM 
+
+Most important Feature is incremental rendering ie. the ability to split rendering work into chunks and spread
+it over multiple frames.
+
+4. Reconcilliation -> is the algo that is used by react to diff one tree with another to determine which parts need to be updated.  
+
+5. Virtual DOM -> representation of actual DOM (just an Object) 
+The virtual DOM is a lightweight copy of the real DOM that allows React to manage changes more efficiently by minimizing the direct manipulation required on the real DOM.
+
+6. Diffing algo -> Creates two tree -> old tree vs new tree -> finds the difference between the old tree and new Tree and updates the actual DOM. 
+
