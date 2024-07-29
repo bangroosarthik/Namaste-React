@@ -80,6 +80,7 @@ Syntax is => const [variableName,setVariableName]= useState(defaultvalue);
 
 setVariable name is used to modify the variable 
 
+React keeps a track of the state variable 
 # Whenever a state variable changes it rerenders the entire component.
 
 
@@ -97,4 +98,133 @@ it over multiple frames.
 The virtual DOM is a lightweight copy of the real DOM that allows React to manage changes more efficiently by minimizing the direct manipulation required on the real DOM.
 
 6. Diffing algo -> Creates two tree -> old tree vs new tree -> finds the difference between the old tree and new Tree and updates the actual DOM. 
+
+
+
+Date: 28-07-2024
+# Microservices VS Monolithic 
+Monolith Architecture is one in which the user has everything in a single file 
+like making API calls, Backend, UI, SMS etc.
+
+whereas in microservices we have separate file for each functionality like separate file for Backend, 
+separate file for UI, and same for others.
+
+
+# MAKING AN API CALL 
+
+- Load, API, Render
+- Load, Render, API, Render (✅) Better UX 
+
+
+- useEffect Hook - is used for making an API call
+-  SYNTAX
+useEffect(()=>{
+    we made api call
+},[])
+
+- if no dependency array then useEffect will be called everytime whenever our component renders.
+
+[]->empty dependency array which makes sure that the API call will be made only once after initial render
+
+if we want that our api call to be made after something again and again we can specify that in our dependency array 
+
+
+- Shimmer UI - Loading fake page until we get the actual page data.
+
+
+- Conditional Rendering means Rendering based on the condition.
+
+
+- WHen we are changing our local state variable react will render the entire component so fast.
+
+
+Date- 29-07-2024
+
+# Creating multiple Paths in react 
+
+For creating multiple paths in react we need a router and this is also a browser Router 
+So the steps are : 
+- First we need to install react-router-dom library which basically provide us Browser Router as well as the 
+Router Provider.
+
+- Using command: npm i react-router-dom 
+
+- we have a configuration i.e createBrowserRouter that is used to create configuration -> means to specify the paths
+where we want to redirect our page to. 
+
+- Then we need to import one component from react-router-dom that is RouterProvider that will basically provide these routes.
+
+- Syntax is : 
+
+    <RouterProvider router={appRouter}>
+
+- Syntax for creating a browser is: 
+
+const appRouter= createBrowserRouter([here we need to specify the paths and the element ]);
+
+const appRouter= createBrowserRouter([
+    path:'\',
+    element:<Applayout/>
+])
+
+
+- If we redirect to any path that doesnot exist then it returns an error page we can create our own error page 
+
+- createBrowserRouter provides us errorElement that indicates the error page 
+
+-  We have another hook that is provided to us by react-router-dom that is useRouteError which will basically
+    provides us with the information related to the error. 
+
+- Syntax is: 
+
+    const error=useRouteError();
+    
+
+
+# Children Routes - 
+
+When we created a browser router and we want a specific component to be common for all the pages we need to define its children and we can do that using children routes. 
+
+
+Syntax:
+
+const appRouter=createBrowserRouter([
+    {
+        path:"/",
+        element:<AppLayout/>,
+        children:[
+            {
+                path:"/body",
+                element:<Body>,
+            },
+            {
+                path:"/about",
+                element:<About>
+            }
+        ]
+    }
+])
+
+So we can see that the applayout will have these children routes inside it now if we can show our children routes in our page using a component that is provided to us and that is <Outlet /> component.
+
+
+So whenever we move to about us page the outlet will get replaced by the about us component and same for others.
+
+
+
+- If we want to create a Link in react we should not use anchor tag as it reloads entire page 
+
+- We have Link provided by react-router-dom so we should use it as it does not reload entire page and improves the 
+    response time and is efficient.
+
+- Syntax: 
+    <Link to={path} ></Link>
+
+
+- Thats why React is called single page application. 
+
+- There are two tyes of routing: 
+
+    1. Client Side Routing - means where we are just using components and we are not making an external call via network all the things are there during initial render.
+    2. Server side routing -  means we made an external call to the network fetches the page.html and displays that. 
 

@@ -26,6 +26,19 @@ body{
 
 }
 
+.nav-items > .lgn-btn{
+    display: flex;
+    gap: 30px;
+    font-size: large;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: greenyellow;
+}
+
 .Header{
     display: flex;
     justify-content: space-between;
@@ -55,6 +68,7 @@ body{
     width: 80px;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .res-container{
@@ -92,4 +106,50 @@ body{
     background-color: yellow;
     color: black;
     font-weight: 500;
+}
+
+.shimmer-card{
+    margin: 40px 150px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.shimmer-container{
+    
+    width: 200px;
+    height: 200px;
+    background-color: lightgrey;
+}
+
+.shimmer-img{
+    width: 10px;
+    height: 10px;
+    background-color: darkgray;
+    padding: 50px;
+}
+
+.shimmer-info{
+    width: 5px;
+    height: 5px;
+    background-color: darkgrey;
+    padding: 2px 30px;
+
+}
+
+
+.shimmer-info2{
+    width: 5px;
+    height: 5px;
+    background-color: darkgrey;
+    padding: 15px 15px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-stretch: expanded;
+    color: brown;
+
 }
